@@ -1,6 +1,6 @@
 # springboot-vue-example
 ## 关于本项目
- 文章介绍：[SpringBoot + Vue Element UI 实现前后端分离，实现对一张表的增删改查](https://liuyanzhao.com/9511.html) <br/>
+ 文章介绍：[SpringBoot + Vue Element UI 实现前后端分离](https://liuyanzhao.com/9511.html) <br/>
 这个小项目是一个 springboot 和 vue 的案例，是5月份一个同学找博主做的毕设，服务器管理信息，由用户申请服务器和释放服务器，查看消息。
 当时需求很简单，一个服务器信息的管理，一个消息管理。作为理解前后端项目分离，我觉得足够了。
 
