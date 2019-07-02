@@ -1,0 +1,44 @@
+target/
+logs/
+logs/
+!.mvn/wrapper/maven-wrapper.jar
+node_modules/
+build/
+yarn-error.log
+npm-error.log
+package-lock.json
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+log/
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Mac
+.DS_Store
+*/.DS_Store
+
+### VS Code ###
+*.project
+*.factorypath
+
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sens.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.example.sens.entity.User">
+    <id column="user_id" jdbcType="INTEGER" property="userId"/>
+    <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+    <result column="user_pass" jdbcType="VARCHAR" property="userPass"/>
+    <result column="type" jdbcType="VARCHAR" property="type"/>
+  </resultMap>
+
+  <select id="findAll" resultMap="BaseResultMap">
+    SELECT * FROM user ORDER BY user_id DESC
+  </select>
+
+    <select id="findByUserName" resultMap="BaseResultMap">
+      select * from user where user_name = #{value} LIMIT 1
+    </select>
+</mapper>

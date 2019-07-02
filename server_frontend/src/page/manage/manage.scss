@@ -1,0 +1,13 @@
+.messageDialog{
+
+  .el-dialog{
+    width:500px;
+    .messageForm{
+      margin-right:10px;
+      .el-input__inner{
+        height:33px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,42 @@
+*{
+  margin:0;padding:0;
+}
+html,body{
+  height:100%;
+  width:100%;
+}
+#app{
+  height:100%;
+  .el-container{
+    height:100%;
+  }
+}
+.el-header{
+  padding:0!important;
+  background:#3c8dbc;
+
+}
+.el-main{
+  background:#f3f3f3;
+  flex-basis: 0 !important;
+}
+*::-webkit-scrollbar{
+  width:5px;
+  height:5px;
+}
+*::-webkit-scrollbar-thumb{ /*滚动条里面小方块*/
+  border-radius: 15px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  //background: #cce2f7;
+  background: #999;
+}
+*::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background: #EDEDED;
+}
+.el-table{
+  thead tr th{
+    background:#ebeef5;
+  }
+}

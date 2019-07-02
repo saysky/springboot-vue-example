@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sens.mapper.ServerMapper">
+    <resultMap id="BaseResultMap" type="com.example.sens.entity.Server">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="apply_user_name" jdbcType="VARCHAR" property="applyUserName"/>
+        <result column="server_name" jdbcType="VARCHAR" property="serverName"/>
+        <result column="server_status" jdbcType="VARCHAR" property="serverStatus"/>
+        <result column="apply_time" jdbcType="INTEGER" property="applyTime"/>
+        <result column="release_time" jdbcType="INTEGER" property="releaseTime"/>
+        <result column="project_name" jdbcType="VARCHAR" property="projectName"/>
+    </resultMap>
+
+
+    <update id="releaseOuttime">
+    update server set server_status = 'free', apply_user_name = NULL, apply_time = NULL, release_time = NULL, project_name = NULL
+    where release_time &lt; #{now} AND server_status = 'used'
+  </update>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from server
+        <where>
+            <if test="queryType != null and queryType != '' and queryKeywords != null and queryKeywords != ''">
+                ${queryType} LIKE concat(concat('%',#{queryKeywords}),'%')
+            </if>
+        </where>
+        ORDER BY id DESC
+    </select>
+
+
+    <select id="findOuttime" resultMap="BaseResultMap">
+    select * from server  where release_time &lt; #{now} AND server_status = 'used'
+  </select>
+
+    <update id="applyOuttime">
+    update server set server_status = 'used'
+    where apply_time &lt; #{now} AND release_time > #{now} AND server_status = 'free'
+  </update>
+</mapper>
